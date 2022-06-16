@@ -13,7 +13,7 @@ def __get_kubernetes_batchv1client(bearer_token,api_server_endpoint):
         client_api = client.BatchV1Api()
         return client_api
     except Exception as e:
-        #print("Error getting kubernetes client \n{}".format(e))
+        print("Error getting kubernetes client \n{}".format(e))
         return None
 
 def __format_data_for_job(client_output):
@@ -62,7 +62,6 @@ def get_jobs(cluster_details,namespace="default",all_namespaces=True):
             # return data
 
 
-
 def create_job_object():
     # Configureate Pod template container
     container = client.V1Container(
@@ -104,7 +103,6 @@ def create_job(cluster_details,job,namespace):
         print("ERROR IN create_job:\n{}".format(e.body))
         print("TYPE :{}".format(type(e)))
         return __format_data_for_create_job(e.body)
-
 
 
 def delete_job(cluster_details,k8s_object_name=None,namespace="default"):
