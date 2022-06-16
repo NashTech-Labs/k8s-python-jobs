@@ -1,4 +1,4 @@
-# jobs
+# crud operation of jobs
 #### Python client for the kubernetes API
 
 we can use the client module to interact with the resources. 
